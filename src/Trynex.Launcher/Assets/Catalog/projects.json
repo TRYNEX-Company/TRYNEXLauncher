@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "publishedAtUtc": "2026-08-11T00:00:00Z",
+  "projects": [
+    {
+      "schemaVersion": 1,
+      "id": "mr-project",
+      "version": "0.1.0-preview.1",
+      "platform": "ArmaReforger",
+      "name": {
+        "values": {
+          "ru-RU": "MR PROJECT",
+          "uk-UA": "MR PROJECT",
+          "en-US": "MR PROJECT",
+          "de-DE": "MR PROJECT"
+        }
+      },
+      "description": {
+        "values": {
+          "ru-RU": "Проект переходит на Arma Reforger. Установка модификаций появится после публикации первого файлового пакета.",
+          "uk-UA": "Проєкт переходить на Arma Reforger. Встановлення модифікацій з'явиться після публікації першого файлового пакета.",
+          "en-US": "The project is moving to Arma Reforger. Mod installation will become available after the first content package is published.",
+          "de-DE": "Das Projekt wechselt zu Arma Reforger. Die Mod-Installation wird nach dem ersten Inhaltspaket verfügbar."
+        }
+      },
+      "status": {
+        "values": {
+          "ru-RU": "ПЕРЕХОД НА REFORGER",
+          "uk-UA": "ПЕРЕХІД НА REFORGER",
+          "en-US": "MOVING TO REFORGER",
+          "de-DE": "WECHSEL ZU REFORGER"
+        }
+      },
+      "statusColor": "#68D9FA",
+      "artworkPath": "/Trynex.Launcher;component/Assets/Projects/mr-project.png",
+      "contentRoot": "projects/mr-project/0.1.0-preview.1/",
+      "launch": {
+        "steamAppId": "1874880",
+        "arguments": []
+      },
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "publishedAtUtc": "2026-08-11T10:00:00Z",
+  "articles": [
+    {
+      "id": "launcher-preview-foundation",
+      "category": "Launcher",
+      "projectId": null,
+      "publishedAtUtc": "2026-08-11T10:00:00Z",
+      "isFeatured": true,
+      "title": {
+        "values": {
+          "ru-RU": "TRYNEX Launcher получает живую ленту новостей",
+          "uk-UA": "TRYNEX Launcher отримує живу стрічку новин",
+          "en-US": "TRYNEX Launcher gets a live news feed",
+          "de-DE": "TRYNEX Launcher erhält einen Live-Newsfeed"
+        }
+      },
+      "summary": {
+        "values": {
+          "ru-RU": "Новости экосистемы и отдельных проектов теперь могут обновляться без выпуска новой версии лаунчера.",
+          "uk-UA": "Новини екосистеми та окремих проєктів тепер можуть оновлюватися без випуску нової версії лаунчера.",
+          "en-US": "Ecosystem and project news can now be updated without shipping a new launcher version.",
+          "de-DE": "Neuigkeiten zum Ökosystem und zu Projekten können nun ohne neue Launcher-Version aktualisiert werden."
+        }
+      },
+      "artworkPath": "/Trynex.Launcher;component/Assets/Brand/trynex-mark.png",
+      "link": "https://trynex.dev"
+    },
+    {
+      "id": "mr-project-reforger-preparation",
+      "category": "Project",
+      "projectId": "mr-project",
+      "publishedAtUtc": "2026-08-11T09:00:00Z",
+      "isFeatured": false,
+      "title": {
+        "values": {
+          "ru-RU": "MR Project готовится к переходу на Reforger",
+          "uk-UA": "MR Project готується до переходу на Reforger",
+          "en-US": "MR Project prepares for the move to Reforger",
+          "de-DE": "MR Project bereitet den Wechsel zu Reforger vor"
+        }
+      },
+      "summary": {
+        "values": {
+          "ru-RU": "Сервер ещё не открыт: команда собирает и проверяет набор модификаций. Кнопка запуска появится только после готовности сборки.",
+          "uk-UA": "Сервер ще не відкрито: команда збирає та перевіряє набір модифікацій. Кнопка запуску з’явиться лише після готовності збірки.",
+          "en-US": "The server is not open yet while the team assembles and verifies its mod set. Play will unlock only when the build is ready.",
+          "de-DE": "Der Server ist noch nicht geöffnet, während das Team die Mods zusammenstellt und prüft. Spielen wird erst nach Freigabe möglich."
+        }
+      },
+      "artworkPath": "/Trynex.Launcher;component/Assets/Projects/mr-project.png",
+      "link": null
+    },
+    {
+      "id": "trynex-website-online",
+      "category": "Ecosystem",
+      "projectId": null,
+      "publishedAtUtc": "2026-08-11T08:00:00Z",
+      "isFeatured": false,
+      "title": {
+        "values": {
+          "ru-RU": "Официальный сайт TRYNEX уже доступен",
+          "uk-UA": "Офіційний сайт TRYNEX уже доступний",
+          "en-US": "The official TRYNEX website is online",
+          "de-DE": "Die offizielle TRYNEX-Website ist online"
+        }
+      },
+      "summary": {
+        "values": {
+          "ru-RU": "На trynex.dev будет собрана информация о лаунчере, проектах и следующих продуктах экосистемы.",
+          "uk-UA": "На trynex.dev буде зібрана інформація про лаунчер, проєкти та наступні продукти екосистеми.",
+          "en-US": "trynex.dev will bring together information about the launcher, projects and upcoming ecosystem products.",
+          "de-DE": "trynex.dev bündelt Informationen zum Launcher, zu Projekten und zu kommenden Produkten des Ökosystems."
+        }
+      },
+      "artworkPath": "/Trynex.Launcher;component/Assets/Brand/trynex-mark.png",
+      "link": "https://trynex.dev"
+    }
+  ],
+  "announcements": [
+    {
+      "id": "live-notifications-online",
+      "severity": "info",
+      "startsAtUtc": "2026-08-11T10:00:00Z",
+      "endsAtUtc": "2026-09-11T10:00:00Z",
+      "isDismissible": true,
+      "title": {
+        "values": {
+          "ru-RU": "Живые уведомления TRYNEX подключены",
+          "uk-UA": "Живі сповіщення TRYNEX підключено",
+          "en-US": "TRYNEX live notifications are online",
+          "de-DE": "TRYNEX-Live-Benachrichtigungen sind aktiv"
+        }
+      },
+      "message": {
+        "values": {
+          "ru-RU": "Важные сообщения и предупреждения о технических работах теперь появятся в лаунчере без выпуска новой версии.",
+          "uk-UA": "Важливі повідомлення та попередження про технічні роботи тепер з’являтимуться в лаунчері без випуску нової версії.",
+          "en-US": "Important messages and maintenance notices can now appear without releasing a new launcher version.",
+          "de-DE": "Wichtige Meldungen und Wartungshinweise können jetzt ohne neue Launcher-Version erscheinen."
+        }
+      },
+      "link": null
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+<UserControl x:Class="Trynex.Launcher.Views.ProjectDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="{StaticResource BackgroundBrush}">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="30,20,30,34">
+            <Grid Margin="2,0,2,18">
+                <StackPanel Orientation="Horizontal">
+                    <Button Width="38" Height="38" Margin="0,0,12,0"
+                            Style="{StaticResource SecondaryButtonStyle}"
+                            Padding="0" Content="←" FontSize="17"
+                            Command="{Binding BackCommand}" />
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="{Binding Name}" FontSize="25" FontWeight="SemiBold" />
+                        <TextBlock Text="{Binding Platform}" Margin="0,4,0,0" FontSize="10"
+                                   Foreground="{StaticResource MutedTextBrush}" />
+                    </StackPanel>
+                </StackPanel>
+                <Border HorizontalAlignment="Right" VerticalAlignment="Center" Background="#102331"
+                        BorderBrush="#24506B" BorderThickness="1" CornerRadius="11" Padding="11,6">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Width="6" Height="6" Fill="{Binding StatusColor}" Margin="0,0,7,0" />
+                        <TextBlock Text="{Binding Status}" FontSize="8" FontWeight="Bold"
+                                   Foreground="{Binding StatusColor}" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Border Height="292" CornerRadius="18" ClipToBounds="True"
+                    BorderBrush="#32275C" BorderThickness="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#211143" Offset="0" />
+                        <GradientStop Color="#10182A" Offset="0.55" />
+                        <GradientStop Color="#07191E" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="340" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Ellipse Width="340" Height="340" Fill="#2412B9EB" />
+                        <Border Width="226" Height="226" Background="#252525" CornerRadius="20"
+                                BorderBrush="#424B60" BorderThickness="1" ClipToBounds="True">
+                            <Image Source="{Binding ArtworkPath}" Stretch="Uniform">
+                                <Image.Clip>
+                                    <RectangleGeometry Rect="0,0,226,226" RadiusX="28" RadiusY="28" />
+                                </Image.Clip>
+                            </Image>
+                        </Border>
+                    </Grid>
+                    <StackPanel Grid.Column="1" Margin="16,0,42,0" VerticalAlignment="Center">
+                        <Border Width="122" HorizontalAlignment="Left" Background="#2C195B"
+                                CornerRadius="10" Padding="9,5">
+                            <TextBlock Text="MR PROJECT" HorizontalAlignment="Center"
+                                       FontSize="8" FontWeight="Bold" Foreground="#C0A8FF" />
+                        </Border>
+                        <TextBlock Text="{DynamicResource Project.Hero.Title}" Margin="0,16,0,0"
+                                   FontSize="29" FontWeight="Black" />
+                        <TextBlock Text="{Binding Description}" Margin="0,10,0,18"
+                                   FontSize="11" LineHeight="17" TextWrapping="Wrap"
+                                   Foreground="#AAB2C4" />
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource PrimaryButtonStyle}"
+                                    Content="{DynamicResource Project.PlayUnavailable}"
+                                    IsEnabled="{Binding CanPlay}" />
+                            <Border Margin="10,0,0,0" Padding="12,0" Height="46"
+                                    Background="#131A26" CornerRadius="10">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Ellipse Width="6" Height="6" Fill="{StaticResource CyanBrush}" />
+                                    <TextBlock Text="{DynamicResource Project.NoDownloadRequired}" Margin="7,0,0,0"
+                                               FontSize="9" Foreground="#8EDCF2" />
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <TextBlock Text="{DynamicResource Project.Readiness.Title}" Margin="2,24,0,12"
+                       FontSize="17" FontWeight="SemiBold" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Border Margin="0,0,7,0" Padding="19" Style="{StaticResource PageCardStyle}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="6" Height="6" Margin="0,0,7,0" Fill="#68D9FA" />
+                            <TextBlock Text="{DynamicResource Project.Server.Title}" FontSize="11"
+                                       FontWeight="SemiBold" Foreground="#68D9FA" />
+                        </StackPanel>
+                        <TextBlock Text="{DynamicResource Project.Server.Preparing}" Margin="0,8,0,0"
+                                   FontSize="10" LineHeight="15" TextWrapping="Wrap"
+                                   Foreground="{StaticResource MutedTextBrush}" />
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="1" Margin="7,0" Padding="19" Style="{StaticResource PageCardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Project.Mods.Title}" FontSize="11" FontWeight="SemiBold" />
+                        <TextBlock Text="{DynamicResource Project.Mods.Reforger}" Margin="0,8,0,0"
+                                   FontSize="10" LineHeight="15" TextWrapping="Wrap"
+                                   Foreground="{StaticResource MutedTextBrush}" />
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="2" Margin="7,0,0,0" Padding="19" Style="{StaticResource PageCardStyle}">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Project.Profile.Title}" FontSize="11" FontWeight="SemiBold" />
+                        <TextBlock Text="{DynamicResource Project.Profile.Future}" Margin="0,8,0,0"
+                                   FontSize="10" LineHeight="15" TextWrapping="Wrap"
+                                   Foreground="{StaticResource MutedTextBrush}" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid Margin="2,24,2,12">
+                <TextBlock Text="{DynamicResource News.Project.Title}" FontSize="17" FontWeight="SemiBold" />
+                <TextBlock Text="{DynamicResource News.OfflineReady}" HorizontalAlignment="Right"
+                           VerticalAlignment="Center" FontSize="9" Foreground="{StaticResource MutedTextBrush}" />
+            </Grid>
+            <ItemsControl ItemsSource="{Binding News}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="0,0,0,10" Padding="18" Style="{StaticResource PageCardStyle}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="72" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Border Width="58" Height="58" Background="#181C28" CornerRadius="12"
+                                        BorderBrush="#2B3347" BorderThickness="1" ClipToBounds="True">
+                                    <Image Source="{Binding ArtworkPath}" Stretch="Uniform">
+                                        <Image.Clip>
+                                            <RectangleGeometry Rect="0,0,58,58" RadiusX="12" RadiusY="12" />
+                                        </Image.Clip>
+                                    </Image>
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Category}" FontSize="8" FontWeight="Bold"
+                                                   Foreground="{StaticResource CyanBrush}" />
+                                        <TextBlock Text="  ·  " FontSize="8" Foreground="#596176" />
+                                        <TextBlock Text="{Binding DateDisplay}" FontSize="8" Foreground="#768096" />
+                                    </StackPanel>
+                                    <TextBlock Text="{Binding Title}" Margin="0,5,0,0" FontSize="12" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding Summary}" Margin="0,4,0,0" FontSize="9.5"
+                                               TextWrapping="Wrap" Foreground="{StaticResource MutedTextBrush}" />
+                                </StackPanel>
+                                <Button Grid.Column="2" Margin="16,0,0,0" VerticalAlignment="Center"
+                                        Style="{StaticResource SecondaryButtonStyle}"
+                                        Content="{DynamicResource News.ReadMore}"
+                                        Command="{Binding OpenLinkCommand}"
+                                        Visibility="{Binding HasLink, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <Border Margin="0,14,0,0" Padding="20" Background="#0A1815"
+                    BorderBrush="#17462E" BorderThickness="1" CornerRadius="14">
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Project.LaunchFlow.Title}" FontSize="12" FontWeight="SemiBold" />
+                        <TextBlock Text="{DynamicResource Project.LaunchFlow.Description}" Margin="0,6,0,0"
+                                   FontSize="10" Foreground="#90A9A0" />
+                    </StackPanel>
+                    <TextBlock Text="TRYNEX ID  →  SERVER  →  REFORGER WORKSHOP  →  PLAY"
+                               HorizontalAlignment="Right" VerticalAlignment="Center"
+                               FontSize="9" FontWeight="Bold" Foreground="{StaticResource GreenBrush}" />
+                </Grid>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

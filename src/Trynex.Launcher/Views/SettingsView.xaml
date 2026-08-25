@@ -1,0 +1,254 @@
+<UserControl x:Class="Trynex.Launcher.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="{StaticResource BackgroundBrush}">
+    <UserControl.Resources>
+        <Style x:Key="ToggleStyle" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="46" />
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter VerticalAlignment="Center" />
+                            <Border x:Name="Track" Grid.Column="1" Width="42" Height="24"
+                                    Background="#252C3A" BorderBrush="#384155" BorderThickness="1" CornerRadius="12">
+                                <Ellipse x:Name="Knob" Width="16" Height="16" Margin="3"
+                                         HorizontalAlignment="Left" Fill="#A7B0C2" />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Track" Property="Background" Value="{StaticResource PurpleBrush}" />
+                                <Setter TargetName="Track" Property="BorderBrush" Value="#8B5BFF" />
+                                <Setter TargetName="Knob" Property="HorizontalAlignment" Value="Right" />
+                                <Setter TargetName="Knob" Property="Fill" Value="White" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Track" Property="Opacity" Value="0.9" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Cursor" Value="Arrow" />
+                                <Setter Property="Opacity" Value="0.55" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DarkComboBoxItemStyle" TargetType="ComboBoxItem">
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Padding" Value="12,9" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBoxItem">
+                        <Border x:Name="ItemBorder" Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}" CornerRadius="7">
+                            <ContentPresenter VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="True">
+                                <Setter TargetName="ItemBorder" Property="Background" Value="#1B1730" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="ItemBorder" Property="Background" Value="#291753" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DarkComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+            <Setter Property="Background" Value="#10151F" />
+            <Setter Property="BorderBrush" Value="#293247" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="ItemContainerStyle" Value="{StaticResource DarkComboBoxItemStyle}" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <Border x:Name="FieldBorder" Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="8" />
+                            <TextBlock Margin="12,0,42,0"
+                                       VerticalAlignment="Center"
+                                       IsHitTestVisible="False"
+                                       Text="{Binding SelectedItem.Name, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <ToggleButton x:Name="DropDownToggle" Background="Transparent" BorderThickness="0"
+                                          Focusable="False" ClickMode="Press"
+                                          IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+                                <ToggleButton.Template>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <Grid Background="Transparent">
+                                            <Path Width="8" Height="5" Margin="0,0,15,0"
+                                                  HorizontalAlignment="Right" VerticalAlignment="Center"
+                                                  Data="M0,0 L4,4 L8,0" Stroke="#A7B0C2" StrokeThickness="1.4"
+                                                  StrokeStartLineCap="Round" StrokeEndLineCap="Round" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+                            </ToggleButton>
+                            <Popup x:Name="PART_Popup" Placement="Bottom" AllowsTransparency="True"
+                                   IsOpen="{TemplateBinding IsDropDownOpen}" Focusable="False" PopupAnimation="Fade">
+                                <Border Margin="0,5,0,0" Padding="5" Background="#0B0F17"
+                                        BorderBrush="#30394D" BorderThickness="1" CornerRadius="9"
+                                        MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ScrollViewer MaxHeight="260" CanContentScroll="True">
+                                        <ItemsPresenter />
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger SourceName="DropDownToggle" Property="IsMouseOver" Value="True">
+                                <Setter TargetName="FieldBorder" Property="BorderBrush" Value="#6D4BC3" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                <Setter TargetName="FieldBorder" Property="BorderBrush" Value="{StaticResource PurpleBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="FieldBorder" Property="Opacity" Value="0.55" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="30,20,30,34">
+            <Grid Margin="2,0,2,22">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Settings.Title}" FontSize="25" FontWeight="SemiBold" />
+                    <TextBlock Text="{DynamicResource Settings.Subtitle}"
+                               Margin="0,5,0,0" FontSize="12" Foreground="{StaticResource MutedTextBrush}" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Button Style="{StaticResource PrimaryButtonStyle}" Content="{DynamicResource Settings.Save}"
+                            Command="{Binding SaveCommand}" />
+                    <TextBlock Text="{Binding StatusMessage}" Margin="0,6,0,0" FontSize="8.5"
+                               Foreground="{StaticResource MutedTextBrush}" HorizontalAlignment="Right" />
+                </StackPanel>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.08*" />
+                    <ColumnDefinition Width="0.92*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,8,0">
+                    <Border Padding="22" Style="{StaticResource PageCardStyle}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Settings.General.Title}" FontSize="16" FontWeight="SemiBold" />
+                            <TextBlock Text="{DynamicResource Settings.General.Description}"
+                                       Margin="0,5,0,20" FontSize="10" Foreground="{StaticResource MutedTextBrush}" />
+
+                            <TextBlock Text="{DynamicResource Settings.Language}" Style="{StaticResource FieldLabelStyle}" />
+                            <ComboBox Style="{StaticResource DarkComboBoxStyle}"
+                                      ItemsSource="{Binding Languages}"
+                                      SelectedValuePath="Code"
+                                      SelectedValue="{Binding SelectedLanguage, Mode=TwoWay}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                            <TextBlock Text="{DynamicResource Settings.InstallFolder}" Margin="0,18,0,7"
+                                       Style="{StaticResource FieldLabelStyle}" />
+                            <TextBox Style="{StaticResource FormTextBoxStyle}"
+                                     Text="{Binding DefaultInstallDirectory, UpdateSourceTrigger=PropertyChanged}"
+                                     ToolTip="{DynamicResource Settings.InstallFolder.Example}" />
+                            <TextBlock Text="{DynamicResource Settings.InstallFolder.Help}"
+                                       Margin="0,7,0,0" FontSize="9" Foreground="#6F788C" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Margin="0,16,0,0" Padding="22" Style="{StaticResource PageCardStyle}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Settings.Downloads.Title}" FontSize="16" FontWeight="SemiBold" />
+                            <TextBlock Text="{DynamicResource Settings.Downloads.Description}"
+                                       Margin="0,5,0,20" FontSize="10" Foreground="{StaticResource MutedTextBrush}" />
+                            <TextBlock Text="{DynamicResource Settings.DownloadLimit}" Style="{StaticResource FieldLabelStyle}" />
+                            <Grid>
+                                <TextBox Style="{StaticResource FormTextBoxStyle}" IsEnabled="False"
+                                         Text="{Binding DownloadLimitMbps, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBlock Text="{DynamicResource Settings.DownloadUnlimited}" Margin="0,0,12,0" HorizontalAlignment="Right"
+                                           VerticalAlignment="Center" IsHitTestVisible="False"
+                                           FontSize="9" Foreground="#697287" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="8,0,0,0">
+                    <Border Padding="22" Style="{StaticResource PageCardStyle}">
+                        <StackPanel>
+                            <TextBlock Text="{DynamicResource Settings.Behavior.Title}" FontSize="16" FontWeight="SemiBold" />
+                            <TextBlock Text="{DynamicResource Settings.Behavior.Description}"
+                                       Margin="0,5,0,18" FontSize="10" Foreground="{StaticResource MutedTextBrush}" />
+
+                            <CheckBox Style="{StaticResource ToggleStyle}" IsChecked="{Binding MinimizeToTray}" IsEnabled="False">
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Settings.Tray.Title}" FontSize="11" FontWeight="SemiBold" />
+                                    <TextBlock Text="{DynamicResource Settings.Tray.Description}"
+                                               Margin="0,3,12,0" FontSize="9" Foreground="{StaticResource MutedTextBrush}" />
+                                </StackPanel>
+                            </CheckBox>
+                            <Border Height="1" Margin="0,15" Background="#202738" />
+
+                            <CheckBox Style="{StaticResource ToggleStyle}" IsChecked="{Binding StartWithWindows}" IsEnabled="False">
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Settings.StartWindows.Title}" FontSize="11" FontWeight="SemiBold" />
+                                    <TextBlock Text="{DynamicResource Settings.StartWindows.Description}"
+                                               Margin="0,3,12,0" FontSize="9" Foreground="{StaticResource MutedTextBrush}" />
+                                </StackPanel>
+                            </CheckBox>
+                            <Border Height="1" Margin="0,15" Background="#202738" />
+
+                            <CheckBox Style="{StaticResource ToggleStyle}" IsChecked="{Binding AllowPrereleaseUpdates}" IsEnabled="False">
+                                <StackPanel>
+                                    <TextBlock Text="{DynamicResource Settings.Prerelease.Title}" FontSize="11" FontWeight="SemiBold" />
+                                    <TextBlock Text="{DynamicResource Settings.Prerelease.Description}"
+                                               Margin="0,3,12,0" FontSize="9" Foreground="{StaticResource MutedTextBrush}" />
+                                </StackPanel>
+                            </CheckBox>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Margin="0,16,0,0" Padding="22" Background="#0C1915" BorderBrush="#214333"
+                            BorderThickness="1" CornerRadius="14">
+                        <StackPanel>
+                            <Grid Width="42" Height="42" HorizontalAlignment="Left">
+                                <Ellipse Fill="#112A20" />
+                                <TextBlock Text="&#xE72E;" FontFamily="Segoe MDL2 Assets" FontSize="17"
+                                           Foreground="{StaticResource GreenBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                            <TextBlock Text="{DynamicResource Settings.Privacy.Title}" Margin="0,14,0,0" FontSize="13" FontWeight="SemiBold" />
+                            <TextBlock Text="{DynamicResource Settings.Privacy.Description}"
+                                       Margin="0,7,0,0" FontSize="10" LineHeight="16" TextWrapping="Wrap"
+                                       Foreground="#91B1A0" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

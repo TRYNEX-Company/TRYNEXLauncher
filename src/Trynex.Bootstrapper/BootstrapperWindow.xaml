@@ -1,0 +1,165 @@
+<Window x:Class="Trynex.Bootstrapper.BootstrapperWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TRYNEX"
+        Icon="/TRYNEX;component/Assets/trynex.ico"
+        Width="680"
+        Height="390"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#080A10"
+        Foreground="#F7F8FF"
+        Loaded="Window_Loaded"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+    <Window.Resources>
+        <Style x:Key="CaptionButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="42" />
+            <Setter Property="Height" Value="36" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Foreground" Value="#8891A5" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Chrome" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Chrome" Property="Background" Value="#24142E" />
+                                <Setter Property="Foreground" Value="#FFFFFF" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="38" />
+            <Setter Property="Padding" Value="20,0" />
+            <Setter Property="Background" Value="#6F28FF" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Surface" Background="{TemplateBinding Background}" CornerRadius="9">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Surface" Property="Background" Value="#813FFF" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Surface" Property="Background" Value="#571BCF" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border BorderBrush="#252C3D" BorderThickness="1" Background="#080A10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="52" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="#0A0D14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" Margin="18,0" VerticalAlignment="Center">
+                    <Image Source="/TRYNEX;component/Assets/trynex-mark.png"
+                           Width="28" Height="28" Stretch="Uniform" />
+                    <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                        <TextBlock Text="TRYNEX" FontSize="15" FontWeight="Bold" />
+                        <TextBlock Text="SECURE LAUNCHER" FontSize="7" FontWeight="SemiBold" Foreground="#18BDF2" />
+                    </StackPanel>
+                </StackPanel>
+
+                <Button Grid.Column="1" Style="{StaticResource CaptionButtonStyle}" Content="×"
+                        Click="CloseButton_Click" ToolTip="Закрыть" />
+            </Grid>
+
+            <Grid Grid.Row="1" Margin="44,28,44,34">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Width="126" Height="126" VerticalAlignment="Top" Margin="0,2,0,0">
+                    <Ellipse Fill="#101522" Stroke="#243049" StrokeThickness="1" />
+                    <Ellipse Width="102" Height="102">
+                        <Ellipse.Fill>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#2F155F" Offset="0" />
+                                <GradientStop Color="#0E1625" Offset="1" />
+                            </RadialGradientBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Image Source="/TRYNEX;component/Assets/trynex-mark.png"
+                           Width="98" Height="98" Stretch="Uniform" />
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="24,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Border Width="132" Height="24" HorizontalAlignment="Left"
+                            Background="#1B1235" BorderBrush="#4F2A91" BorderThickness="1" CornerRadius="12">
+                        <TextBlock Text="TRYNEX LAUNCHER" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   FontSize="8" FontWeight="Bold" Foreground="#B796FF" />
+                    </Border>
+
+                    <TextBlock x:Name="StatusTitle" Grid.Row="1" Margin="0,18,0,0"
+                               Text="Запускаем TRYNEX" FontSize="25" FontWeight="Bold" />
+                    <TextBlock x:Name="StatusDetail" Grid.Row="2" Margin="0,8,0,0"
+                               Text="Подготавливаем безопасную среду запуска."
+                               FontSize="11" Foreground="#8F99AE" TextWrapping="Wrap" LineHeight="18" />
+
+                    <Grid Grid.Row="3" Margin="0,24,0,0">
+                        <ProgressBar x:Name="UpdateProgress" Height="7" Minimum="0" Maximum="100"
+                                     Value="0" IsIndeterminate="True" Foreground="#752BFF" Background="#171C29" />
+                    </Grid>
+
+                    <TextBlock x:Name="TransferText" Grid.Row="4" Margin="0,10,0,0"
+                               FontSize="10" Foreground="#18BDF2" />
+
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Ellipse x:Name="StatusDot" Width="7" Height="7" Fill="#00E436" />
+                            <TextBlock x:Name="SecurityText" Margin="7,0,0,0"
+                                       Text="Подпись и SHA-256 проверяются автоматически"
+                                       FontSize="9" Foreground="#69748A" />
+                        </StackPanel>
+                        <Button x:Name="RetryButton" Grid.Column="1" Style="{StaticResource ActionButtonStyle}"
+                                Content="ПОВТОРИТЬ" Visibility="Collapsed" Click="RetryButton_Click" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

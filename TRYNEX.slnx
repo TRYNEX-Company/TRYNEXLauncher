@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Trynex.Bootstrapper/Trynex.Bootstrapper.csproj" />
+    <Project Path="src/Trynex.Core/Trynex.Core.csproj" />
+    <Project Path="src/Trynex.Infrastructure/Trynex.Infrastructure.csproj" />
+    <Project Path="src/Trynex.Launcher/Trynex.Launcher.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Trynex.Core.Tests/Trynex.Core.Tests.csproj" />
+    <Project Path="tests/Trynex.Infrastructure.Tests/Trynex.Infrastructure.Tests.csproj" />
+    <Project Path="tests/Trynex.Launcher.Tests/Trynex.Launcher.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools/Trynex.ReleaseTool/Trynex.ReleaseTool.csproj" />
+  </Folder>
+</Solution>

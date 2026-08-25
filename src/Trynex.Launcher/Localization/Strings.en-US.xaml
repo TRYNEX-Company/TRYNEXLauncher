@@ -1,0 +1,163 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="Shell.Section.Main">PRIMARY</sys:String>
+    <sys:String x:Key="Shell.Section.Services">SERVICES</sys:String>
+    <sys:String x:Key="Shell.Update.Tooltip">Close Launcher and safely install the signed update</sys:String>
+    <sys:String x:Key="Shell.Update.Automation">Install TRYNEX update</sys:String>
+    <sys:String x:Key="Shell.Update.Ready">READY TO INSTALL</sys:String>
+    <sys:String x:Key="Shell.User.Online">Online</sys:String>
+    <sys:String x:Key="Shell.Search.Placeholder">Search games, friends and news</sys:String>
+    <sys:String x:Key="Shell.Window.Minimize">Minimize</sys:String>
+    <sys:String x:Key="Shell.Window.Maximize">Maximize</sys:String>
+    <sys:String x:Key="Shell.Window.Close">Close</sys:String>
+
+    <sys:String x:Key="Nav.Home">Home</sys:String>
+    <sys:String x:Key="Nav.Library">Library</sys:String>
+    <sys:String x:Key="Nav.Downloads">Downloads</sys:String>
+    <sys:String x:Key="Nav.Community">Community</sys:String>
+    <sys:String x:Key="Nav.Messenger">Messenger</sys:String>
+    <sys:String x:Key="Nav.Settings">Settings</sys:String>
+    <sys:String x:Key="Common.Soon">SOON</sys:String>
+    <sys:String x:Key="Common.Planned">PLANNED</sys:String>
+    <sys:String x:Key="Common.InDevelopment">IN DEVELOPMENT</sys:String>
+    <sys:String x:Key="Common.Verified">VERIFIED</sys:String>
+
+    <sys:String x:Key="Update.Button.Default">UPDATE TRYNEX</sys:String>
+    <sys:String x:Key="Update.Button.Version">UPDATE TO {0}</sys:String>
+    <sys:String x:Key="Update.Button.Failed">COULD NOT START UPDATE</sys:String>
+
+    <sys:String x:Key="Home.Welcome">Welcome to TRYNEX</sys:String>
+    <sys:String x:Key="Home.Subtitle">Your library, community and services — all in one place.</sys:String>
+    <sys:String x:Key="Home.SystemOk">SYSTEM OPERATIONAL</sys:String>
+    <sys:String x:Key="Home.UpdatesConnected">•  UPDATES CONNECTED</sys:String>
+    <sys:String x:Key="Home.Hero.Title">MORE THAN&#x0a;JUST A LAUNCHER.</sys:String>
+    <sys:String x:Key="Home.Hero.Description">Fast launch, honest updates and full control&#x0a;over your games without unnecessary noise.</sys:String>
+    <sys:String x:Key="Home.OpenLibrary">OPEN LIBRARY</sys:String>
+    <sys:String x:Key="Home.OpenDownloads">DOWNLOADS</sys:String>
+    <sys:String x:Key="Home.Continue">Continue</sys:String>
+    <sys:String x:Key="Home.ViewAll">VIEW ALL  →</sys:String>
+    <sys:String x:Key="Home.Mr.Status">  MOVING TO REFORGER</sys:String>
+    <sys:String x:Key="Home.Messenger.Description">Secure communication on every device.</sys:String>
+    <sys:String x:Key="Home.AddProject">Add project</sys:String>
+    <sys:String x:Key="Home.AddProject.Description">Connection will be available later</sys:String>
+    <sys:String x:Key="Home.Updates.Title">TRYNEX updates</sys:String>
+    <sys:String x:Key="Home.Updates.Description">R2 delivery, signature verification and automatic rollback are connected.</sys:String>
+    <sys:String x:Key="Home.Version">Launcher version</sys:String>
+
+    <sys:String x:Key="Library.Title">Library</sys:String>
+    <sys:String x:Key="Library.Subtitle">Games and projects linked to your account.</sys:String>
+    <sys:String x:Key="Library.Search">Search library</sys:String>
+    <sys:String x:Key="Library.Filter.All">ALL GAMES</sys:String>
+    <sys:String x:Key="Library.Filter.Installed">INSTALLED</sys:String>
+    <sys:String x:Key="Library.Filter.Favorites">FAVORITES</sys:String>
+    <sys:String x:Key="Library.LastLaunch">Last launch: no data</sys:String>
+    <sys:String x:Key="Library.Version">Version: —</sys:String>
+    <sys:String x:Key="Library.Unavailable">UNAVAILABLE</sys:String>
+    <sys:String x:Key="Library.Footer">New projects will appear here after the catalog is securely connected.</sys:String>
+    <sys:String x:Key="Library.Mr.Description">The project is moving to Arma Reforger. Mod support and server connection will appear after the server build is approved.</sys:String>
+    <sys:String x:Key="Library.Mr.Status">MOVING TO REFORGER</sys:String>
+
+    <sys:String x:Key="Downloads.Title">Downloads</sys:String>
+    <sys:String x:Key="Downloads.Subtitle">Updates, file verification and installation queue.</sys:String>
+    <sys:String x:Key="Downloads.Active">ACTIVE: 0</sys:String>
+    <sys:String x:Key="Downloads.Channel.Title">R2 update channel is connected</sys:String>
+    <sys:String x:Key="Downloads.Channel.Description">Signed releases, resumable downloads and automatic rollback are operational.</sys:String>
+    <sys:String x:Key="Downloads.Manifest.Title">Signed manifest</sys:String>
+    <sys:String x:Key="Downloads.Manifest.Description">The release manifest is verified with the built-in ECDSA P-256 public key.</sys:String>
+    <sys:String x:Key="Downloads.Resume.Title">Resume interrupted downloads</sys:String>
+    <sys:String x:Key="Downloads.Resume.Description">A download continues from the last byte and is then verified with SHA-256.</sys:String>
+    <sys:String x:Key="Downloads.Rollback.Title">Version rollback</sys:String>
+    <sys:String x:Key="Downloads.Rollback.Description">A new version is installed separately; the previous one remains until a successful launch.</sys:String>
+    <sys:String x:Key="Downloads.Security.Title">Secure connection</sys:String>
+    <sys:String x:Key="Downloads.Security.Description">The launcher accepts only a correctly signed manifest and a package matching its SHA-256 hash.</sys:String>
+    <sys:String x:Key="Downloads.FoundationReady">UPDATE FOUNDATION READY</sys:String>
+
+    <sys:String x:Key="Community.Title">Community</sys:String>
+    <sys:String x:Key="Community.Subtitle">News, friends and events across the TRYNEX ecosystem.</sys:String>
+    <sys:String x:Key="Community.Hero.Title">One community. No unnecessary noise.</sys:String>
+    <sys:String x:Key="Community.Hero.Description">Fresh TRYNEX and project news is already available. Friends and events will arrive after accounts are connected.</sys:String>
+    <sys:String x:Key="Community.News.Title">TRYNEX news</sys:String>
+    <sys:String x:Key="Community.News.Description">Posts will come from our own API with content authenticity verification.</sys:String>
+    <sys:String x:Key="Community.Friends.Title">Friends and presence</sys:String>
+    <sys:String x:Key="Community.Friends.Description">User statuses will stay disabled until consent and privacy controls are available.</sys:String>
+
+    <sys:String x:Key="Messenger.Subtitle">Easy communication on phone and computer</sys:String>
+    <sys:String x:Key="Messenger.Description">Messenger is not connected yet. End-to-end encryption will use a proven protocol,&#x0a;not custom untested cryptography.</sys:String>
+    <sys:String x:Key="Messenger.Simple">Simple interface</sys:String>
+    <sys:String x:Key="Messenger.Sync">Synchronization</sys:String>
+    <sys:String x:Key="Messenger.E2ee">Proven E2EE</sys:String>
+    <sys:String x:Key="Messenger.Research">IN RESEARCH</sys:String>
+
+    <sys:String x:Key="Settings.Title">Settings</sys:String>
+    <sys:String x:Key="Settings.Subtitle">Settings for this device. No secrets are stored here.</sys:String>
+    <sys:String x:Key="Settings.Save">SAVE</sys:String>
+    <sys:String x:Key="Settings.General.Title">General</sys:String>
+    <sys:String x:Key="Settings.General.Description">Language and folder for future installations.</sys:String>
+    <sys:String x:Key="Settings.Language">INTERFACE LANGUAGE</sys:String>
+    <sys:String x:Key="Settings.InstallFolder">DEFAULT INSTALLATION FOLDER</sys:String>
+    <sys:String x:Key="Settings.InstallFolder.Example">Example: D:\Games\TRYNEX Library</sys:String>
+    <sys:String x:Key="Settings.InstallFolder.Help">The path is validated before every file operation.</sys:String>
+    <sys:String x:Key="Settings.Downloads.Title">Downloads</sys:String>
+    <sys:String x:Key="Settings.Downloads.Description">The limit will be enabled with the game content downloader.</sys:String>
+    <sys:String x:Key="Settings.DownloadLimit">SPEED LIMIT, MBIT/S</sys:String>
+    <sys:String x:Key="Settings.DownloadUnlimited">0 = unlimited</sys:String>
+    <sys:String x:Key="Settings.Behavior.Title">Behavior</sys:String>
+    <sys:String x:Key="Settings.Behavior.Description">Settings are stored locally in your Windows profile.</sys:String>
+    <sys:String x:Key="Settings.Tray.Title">Minimize to tray</sys:String>
+    <sys:String x:Key="Settings.Tray.Description">Will be enabled together with the system tray integration.</sys:String>
+    <sys:String x:Key="Settings.StartWindows.Title">Start with Windows</sys:String>
+    <sys:String x:Key="Settings.StartWindows.Description">Will be enabled after application signing and startup integration.</sys:String>
+    <sys:String x:Key="Settings.Prerelease.Title">Preview updates</sys:String>
+    <sys:String x:Key="Settings.Prerelease.Description">Channel selection will become available when the stable channel is launched.</sys:String>
+    <sys:String x:Key="Settings.Privacy.Title">Privacy by default</sys:String>
+    <sys:String x:Key="Settings.Privacy.Description">This settings file contains no passwords, tokens, IP addresses or device identifiers.</sys:String>
+    <sys:String x:Key="Settings.Status.LocalOnly">Settings are saved only on this device.</sys:String>
+    <sys:String x:Key="Settings.Status.Saving">Saving…</sys:String>
+    <sys:String x:Key="Settings.Status.Saved">Saved · {0}</sys:String>
+    <sys:String x:Key="Settings.Status.IoError">Could not save settings. Check folder access.</sys:String>
+    <sys:String x:Key="Settings.Status.AccessError">Windows denied access to this user's settings file.</sys:String>
+    <sys:String x:Key="Library.OpenProject">OPEN PROJECT</sys:String>
+
+    <sys:String x:Key="Notification.Center.Title">Notifications</sys:String>
+    <sys:String x:Key="Notification.Center.Subtitle">Important events, maintenance and TRYNEX news</sys:String>
+    <sys:String x:Key="Notification.Center.Empty">There are no new notifications</sys:String>
+    <sys:String x:Key="Notification.ReadMore">READ MORE →</sys:String>
+    <sys:String x:Key="Notification.Dismiss">Dismiss notification</sys:String>
+    <sys:String x:Key="Notification.Severity.Info">INFORMATION</sys:String>
+    <sys:String x:Key="Notification.Severity.Maintenance">MAINTENANCE</sys:String>
+    <sys:String x:Key="Notification.Severity.Warning">WARNING</sys:String>
+    <sys:String x:Key="Notification.Severity.Critical">IMPORTANT</sys:String>
+
+    <sys:String x:Key="News.Home.Title">TRYNEX news</sys:String>
+    <sys:String x:Key="News.ViewAll">VIEW ALL →</sys:String>
+    <sys:String x:Key="News.ReadMore">READ MORE →</sys:String>
+    <sys:String x:Key="News.Live">FEED ONLINE</sys:String>
+    <sys:String x:Key="News.OfflineReady">Available without a network connection</sys:String>
+    <sys:String x:Key="News.All.Title">Latest news</sys:String>
+    <sys:String x:Key="News.Project.Title">Project news</sys:String>
+    <sys:String x:Key="News.Category.Launcher">LAUNCHER</sys:String>
+    <sys:String x:Key="News.Category.Project">PROJECT</sys:String>
+    <sys:String x:Key="News.Category.Ecosystem">ECOSYSTEM</sys:String>
+
+    <sys:String x:Key="Project.Hero.Title">YOUR PATH TO THE SERVER</sys:String>
+    <sys:String x:Key="Project.PlayUnavailable">SERVER IN PREPARATION</sys:String>
+    <sys:String x:Key="Project.NoDownloadRequired">Nothing needs to be downloaded yet</sys:String>
+    <sys:String x:Key="Project.Readiness.Title">Project readiness</sys:String>
+    <sys:String x:Key="Project.Server.Title">Server</sys:String>
+    <sys:String x:Key="Project.Server.Preparing">The owner is assembling the server build and its mod list.</sys:String>
+    <sys:String x:Key="Project.Mods.Title">Mods</sys:String>
+    <sys:String x:Key="Project.Mods.Reforger">Reforger will automatically verify and download the required versions when connecting.</sys:String>
+    <sys:String x:Key="Project.Profile.Title">Member profile</sys:String>
+    <sys:String x:Key="Project.Profile.Future">Rank, callsign and unit will appear after TRYNEX ID is connected.</sys:String>
+    <sys:String x:Key="Project.LaunchFlow.Title">Safe launch plan</sys:String>
+    <sys:String x:Key="Project.LaunchFlow.Description">TRYNEX will verify access and server status while Reforger Workshop synchronizes game files.</sys:String>
+
+    <sys:String x:Key="Identity.Action.SignIn">Sign in to TRYNEX ID</sys:String>
+    <sys:String x:Key="Identity.Action.SignOut">Sign out on this computer</sys:String>
+    <sys:String x:Key="Identity.Status.SignedOut">Select to sign in</sys:String>
+    <sys:String x:Key="Identity.Status.OpeningBrowser">Opening secure sign-in…</sys:String>
+    <sys:String x:Key="Identity.Status.Cancelled">Sign-in cancelled</sys:String>
+    <sys:String x:Key="Identity.Status.Failed">Unable to sign in</sys:String>
+    <sys:String x:Key="Identity.Status.Unavailable">TRYNEX ID is currently unavailable</sys:String>
+</ResourceDictionary>
